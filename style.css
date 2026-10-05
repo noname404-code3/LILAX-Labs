@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#050807;--panel:#0b100e;--panel2:#0d1411;--text:#f1f7f3;--muted:#89968e;
+  --line:rgba(255,255,255,.09);--green:#a8ffcf;--green2:#52e8a0;--blue:#8bbcff;
+  --shadow:0 30px 100px rgba(0,0,0,.48);--radius:26px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 5%,rgba(74,255,158,.09),transparent 28%),radial-gradient(circle at 85% 20%,rgba(93,145,255,.08),transparent 30%);z-index:-3}
+.noise{position:fixed;inset:0;opacity:.025;pointer-events:none;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.cursor-glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(116,255,181,.075),transparent 66%);pointer-events:none;transform:translate(-50%,-50%);z-index:-1}
+a{color:inherit;text-decoration:none}button{font:inherit}.section{width:min(1180px,calc(100% - 40px));margin:auto}
+.nav-wrap{position:fixed;top:16px;left:0;right:0;z-index:50;padding:0 20px}
+.nav{width:min(1180px,100%);height:68px;margin:auto;padding:10px 12px 10px 16px;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:20px;background:rgba(7,11,9,.72);backdrop-filter:blur(22px);box-shadow:0 15px 60px rgba(0,0,0,.25)}
+.brand{display:flex;align-items:center;gap:10px}.brand-mark{width:34px;height:34px}.brand strong{display:block;font-size:14px;letter-spacing:.18em}.brand small{display:block;font:500 8px "DM Mono";letter-spacing:.28em;color:#7f8c84;margin-top:2px}
+.nav-links{display:flex;gap:30px;margin-left:50px}.nav-links a{font-size:13px;color:#9ca8a1;transition:.25s}.nav-links a:hover{color:#fff}
+.nav-cta,.btn,.small-btn{border:1px solid rgba(168,255,207,.22);background:rgba(168,255,207,.07);color:#dfffee;border-radius:12px;padding:12px 16px;font-size:12px;font-weight:700;transition:.25s;cursor:pointer}.nav-cta:hover,.small-btn:hover{transform:translateY(-2px);background:rgba(168,255,207,.14)}
+.hero{min-height:900px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:50px;padding-top:125px}
+.eyebrow,.kicker,.availability,.version,.card-meta,.release-tags,.toronto-clock{font:500 10px "DM Mono",monospace;letter-spacing:.13em}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid var(--line);border-radius:99px;color:#aab7af;background:rgba(255,255,255,.025)}.pulse{width:6px;height:6px;border-radius:50%;background:var(--green2);box-shadow:0 0 15px var(--green2)}
+.hero h1{font-size:clamp(64px,8.2vw,116px);line-height:.9;letter-spacing:-.075em;margin:27px 0 28px;font-weight:800}.hero h1 em,.section-heading h2 em,.download-copy h2 em,.about-copy h2 em{font-style:normal;color:transparent;background:linear-gradient(100deg,#fff 5%,#a8ffcf 45%,#8bbcff 90%);background-clip:text;-webkit-background-clip:text}
+.hero-text{max-width:570px;font-size:17px;line-height:1.75;color:#929e97}.hero-actions{display:flex;gap:12px;margin:32px 0 38px}.btn{display:inline-flex;align-items:center;gap:22px;padding:15px 19px}.btn-primary{background:linear-gradient(135deg,#b9ffda,#73efae);color:#06100a;border:0;box-shadow:0 12px 35px rgba(82,232,160,.16)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(82,232,160,.23)}.btn-ghost{background:rgba(255,255,255,.035);color:#c6d0ca;border-color:var(--line)}.hero-stats{display:flex;gap:34px}.hero-stats div{display:flex;flex-direction:column;gap:5px}.hero-stats b{font:600 12px "DM Mono";color:#d9e8df}.hero-stats span{font-size:10px;color:#69766e}
+.hero-product{position:relative;display:flex;justify-content:center;align-items:center}.halo{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(98,255,170,.13),transparent 65%);filter:blur(8px);animation:breathe 5s ease-in-out infinite}.product-window{position:relative;width:min(520px,100%);border:1px solid rgba(190,255,220,.15);border-radius:27px;background:linear-gradient(145deg,rgba(20,29,24,.88),rgba(7,11,9,.92));box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden;transform:perspective(1200px) rotateY(-7deg) rotateX(3deg);transition:.5s}.product-window:hover{transform:perspective(1200px) rotateY(-2deg) rotateX(1deg) translateY(-5px)}.window-top{height:54px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 20px}.window-brand{font:500 11px "DM Mono";letter-spacing:.08em;color:#c4d0c9;display:flex;align-items:center;gap:9px}.window-brand img{width:20px}.window-dots{display:flex;gap:6px}.window-dots i{width:6px;height:6px;border-radius:50%;background:#45514a}.vpn-content{text-align:center;padding:55px 40px 45px}.mini-status{display:inline-flex;gap:7px;align-items:center;font:500 9px "DM Mono";color:#819089;letter-spacing:.14em}.mini-status span{width:6px;height:6px;border-radius:50%;background:var(--green2);box-shadow:0 0 10px var(--green2)}.shield{width:88px;height:88px;margin:22px auto 18px;border:1px solid rgba(168,255,207,.2);border-radius:28px;display:grid;place-items:center;font-size:30px;color:var(--green);background:radial-gradient(circle at 40% 30%,rgba(168,255,207,.12),rgba(168,255,207,.025));box-shadow:0 0 60px rgba(82,232,160,.1)}.connected{font-size:31px;font-weight:800;letter-spacing:-.04em}.location{font:500 9px "DM Mono";color:#6f7c74;letter-spacing:.14em;margin-top:7px}.connection-line{height:1px;background:linear-gradient(90deg,transparent,rgba(168,255,207,.4),transparent);margin:35px 0}.vpn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.vpn-grid div{border:1px solid var(--line);border-radius:13px;padding:13px;background:rgba(255,255,255,.018)}.vpn-grid small{display:block;font:500 8px "DM Mono";color:#68756e;margin-bottom:7px}.vpn-grid b{font:600 9px "DM Mono";color:#cfe1d6}.window-footer{padding:13px 20px;border-top:1px solid var(--line);font:500 9px "DM Mono";color:#64716a;display:flex;justify-content:space-between}.window-footer span{color:var(--green2)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;color:#4f5c55;font:500 10px "DM Mono";letter-spacing:.25em;padding:17px 0}.ticker div{animation:marquee 28s linear infinite;width:max-content}.ticker span{color:#94bfa7;margin:0 18px}
+.products-section{padding:150px 0 120px}.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}.kicker{color:#718078}.section-heading h2,.about-copy h2{font-size:clamp(42px,5vw,68px);line-height:.96;letter-spacing:-.06em;margin:14px 0 0}.section-heading p{max-width:350px;color:#7f8b84;line-height:1.7;font-size:13px}.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.software-card{min-height:360px;border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:linear-gradient(145deg,rgba(15,21,18,.9),rgba(8,12,10,.75));position:relative;overflow:hidden;transition:.35s;display:flex;flex-direction:column}.software-card:hover{border-color:rgba(168,255,207,.18);transform:translateY(-5px);box-shadow:0 25px 80px rgba(0,0,0,.28)}.software-card.featured:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(168,255,207,.34),transparent 42%,rgba(139,188,255,.18));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}.card-top{display:flex;justify-content:space-between;align-items:center}.availability{padding:7px 9px;border-radius:99px;background:rgba(255,255,255,.035);color:#89968e}.availability.live{color:var(--green);background:rgba(82,232,160,.06)}.availability.live i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green2);margin-right:6px;box-shadow:0 0 8px var(--green2)}.availability.lab{color:#a9c3ff}.version{color:#657169}.software-icon{width:54px;height:54px;margin:38px 0 17px;border-radius:16px;display:grid;place-items:center;background:rgba(168,255,207,.07);border:1px solid rgba(168,255,207,.12);font-size:20px;color:var(--green)}.software-icon img{width:31px}.software-icon.muted{color:#66736b;background:rgba(255,255,255,.03);border-color:var(--line)}.software-card h3{font-size:23px;letter-spacing:-.04em;margin:0 0 9px}.software-card p{font-size:12px;line-height:1.65;color:#7e8b83;max-width:430px;margin:0}.card-meta{display:flex;gap:9px;margin-top:auto;padding-top:25px;color:#58655e}.card-meta span{border:1px solid var(--line);padding:6px 8px;border-radius:7px}.download-row{border-top:1px solid var(--line);margin-top:20px;padding-top:17px;display:flex;align-items:center;justify-content:space-between;gap:12px}.download-count{font:500 10px "DM Mono";color:#657169}.download-count b{color:#b9c9c0;font-weight:500}.small-btn{padding:9px 11px;white-space:nowrap}.small-btn.disabled{opacity:.42;cursor:not-allowed}.download-section{padding-bottom:130px}.download-panel{position:relative;overflow:hidden;border:1px solid rgba(168,255,207,.16);border-radius:32px;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:40px;background:radial-gradient(circle at 75% 50%,rgba(82,232,160,.08),transparent 40%),linear-gradient(135deg,#0b120e,#080c0a)}.download-glow{position:absolute;width:350px;height:350px;right:-100px;top:-160px;background:rgba(139,188,255,.12);filter:blur(80px);border-radius:50%}.download-copy,.download-action{position:relative}.download-copy h2{font-size:clamp(40px,5vw,65px);letter-spacing:-.06em;margin:13px 0}.download-copy h2 em{font-size:.38em;vertical-align:middle;letter-spacing:0;color:#7d8a82}.download-copy p{color:#7d8a83;max-width:500px;font-size:13px;line-height:1.7}.release-tags{display:flex;gap:8px;margin-top:23px;flex-wrap:wrap}.release-tags span{padding:7px 9px;border:1px solid var(--line);border-radius:7px;color:#68756e}.download-action{text-align:right;min-width:290px}.download-big{margin-bottom:16px}.download-big span{font-size:32px;font-weight:800;letter-spacing:-.04em}.download-big small{color:#68756e;font:500 9px "DM Mono";margin-left:8px}.btn.big{justify-content:center;width:100%;padding:17px 18px}.release-note{display:block;margin-top:11px;color:#59665f;font:500 8px "DM Mono";line-height:1.5}.about-section{padding:50px 0 130px;display:grid;grid-template-columns:150px 1fr 260px;gap:50px;align-items:start}.about-mark{width:100px;height:100px;border:1px solid var(--line);border-radius:28px;display:grid;place-items:center;background:rgba(255,255,255,.02)}.about-mark img{width:55px}.about-copy h2{margin-bottom:25px}.about-copy p{max-width:580px;color:#7f8b84;line-height:1.8;font-size:14px}.principles{border-left:1px solid var(--line);padding-left:25px}.principles div{padding:0 0 20px;margin-bottom:20px;border-bottom:1px solid var(--line)}.principles b{font:500 9px "DM Mono";color:#657169;display:block;margin-bottom:8px}.principles span{font-size:12px;color:#b1beb6}.footer{border-top:1px solid var(--line);width:min(1180px,calc(100% - 40px));margin:auto;padding:35px 0 25px}.footer-main{display:flex;align-items:center;justify-content:space-between}.footer-main p{color:#5e6b63;font-size:11px}.github{font:500 10px "DM Mono";color:#95a49b}.footer-bottom{border-top:1px solid var(--line);margin-top:25px;padding-top:17px;display:flex;justify-content:space-between;color:#4f5c55;font:500 9px "DM Mono";letter-spacing:.08em}.toronto-clock{display:flex;align-items:center;gap:8px}.toronto-clock i{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}.toronto-clock b{color:#9aa9a1;font-weight:500}.toronto-clock small{font:inherit;color:#5f6b64}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}.delay{transition-delay:.15s}
+@keyframes breathe{0%,100%{transform:scale(.94);opacity:.65}50%{transform:scale(1.05);opacity:1}}@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:150px;padding-bottom:90px}.hero-product{order:-1}.product-window{transform:none}.nav-links{display:none}.section-heading{display:block}.section-heading p{margin-top:25px}.download-panel{display:block;padding:38px}.download-action{text-align:left;margin-top:35px;max-width:360px}.about-section{grid-template-columns:1fr}.principles{border-left:0;border-top:1px solid var(--line);padding:25px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.principles div{border-bottom:0}.footer-main{gap:15px}.footer-main p{display:none}}
+@media(max-width:620px){.section,.footer{width:min(100% - 28px,1180px)}.nav-wrap{padding:0 10px}.nav{height:62px}.nav-cta{font-size:10px;padding:10px}.hero h1{font-size:61px}.hero-text{font-size:14px}.hero-actions{flex-wrap:wrap}.hero-stats{gap:20px}.product-window{border-radius:22px}.vpn-content{padding:40px 20px}.vpn-grid{gap:6px}.vpn-grid div{padding:10px 6px}.product-grid{grid-template-columns:1fr}.software-card{min-height:330px}.download-panel{border-radius:25px}.footer-bottom{flex-direction:column;gap:13px}.toronto-clock{order:-1}.about-section{padding-top:0}}
+
+
+/* =========================================================
+   LILAX V3 PERFORMANCE EDITION
+   Low CPU/GPU: transform + opacity only, no continuous blur
+   ========================================================= */
+html { scroll-behavior: smooth; }
+
+.noise,
+.cursor-glow { display: none !important; }
+
+/* Remove expensive live backdrop blur while retaining glass look */
+.nav {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: rgba(7, 11, 9, .96) !important;
+}
+
+/* Keep visual depth without animated filters */
+.halo {
+  animation: none !important;
+  filter: none !important;
+  opacity: .72;
+  background: radial-gradient(circle, rgba(98,255,170,.09), transparent 62%);
+  will-change: auto;
+}
+
+.download-glow {
+  filter: none !important;
+  opacity: .45;
+}
+
+/* Static perspective avoids repeated rendering work */
+.product-window {
+  will-change: auto;
+}
+
+/* Only animate cheap properties */
+.reveal {
+  will-change: opacity, transform;
+}
+
+.software-card,
+.product-window,
+.btn,
+.small-btn,
+.nav-cta {
+  will-change: auto;
+}
+
+/* Ultra-light seamless ticker: transform-only, no filters, no layout animation */
+.ticker {
+  overflow: hidden;
+  contain: layout paint;
+  isolation: isolate;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  animation: lilaxMarquee 24s linear infinite;
+}
+.ticker-set {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.ticker-set span {
+  display: inline-block;
+}
+.ticker-set b {
+  font-weight: 500;
+  margin: 0 18px;
+  color: #94bfa7;
+}
+@keyframes lilaxMarquee {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Lower-motion mode automatically for users who request it */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smaller mobile paint area */
+@media (max-width: 620px) {
+  .halo { opacity: .45; }
+}
